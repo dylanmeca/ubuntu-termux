@@ -39,6 +39,7 @@ if [ "$first" != 1 ];then
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.uptime
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.version
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.vmstat
+        touch $carpeta/$folder/root/.hushlogin
 	cd "$cur"
 fi
 mkdir -p ubuntu-binds
