@@ -80,3 +80,5 @@ mv $bin $PREFIX/bin
 rm -rf $tarball
 printf '\n\e[1;34m%-6s\e[m' '[*] The installation is finished'
 printf '\n\e[1;34m%-6s\e[m' '[*] Start Ubuntu 20.04 with the command: ${bin}'
+cd $HOME
+rm -rf install.sh
