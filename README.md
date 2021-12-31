@@ -31,4 +31,6 @@ This will allow to run ubuntu commands from termux.
 
 You can also look at the list of all [contributors](https://github.com/dylanmeca/ubuntu-android/contributors) who have participated in this project.
 
+## License
 
+The license for this project is [GPL-3.0](https://github.com/dylanmeca/ubuntu-android/blob/main/LICENSE)
