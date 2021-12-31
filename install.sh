@@ -46,6 +46,8 @@ cd \$(dirname \$0)
 unset LD_PRELOAD
 command="proot"
 command+=" --link2symlink"
+# Support System V IPC
+#command+=" --sysvipc"
 command+=" -0"
 command+=" -r $PREFIX/share/Ubuntu/$folder"
 if [ -n "\$(ls -A $PREFIX/share/Ubuntu/ubuntu-binds)" ]; then
