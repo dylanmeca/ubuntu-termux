@@ -4,12 +4,12 @@ cd $PREFIX/share/Ubuntu
 folder=ubuntu-fs
 if [ -d "$folder" ]; then
 	first=1
-	echo -e "\e[1;31m [*] Skipping Downloading"
+	echo -e "\n\e[1;31m [*] Skipping Downloading"
 fi
 tarball="ubuntu-rootfs.tar.gz"
 if [ "$first" != 1 ];then
 	if [ ! -f $tarball ]; then
-		echo -e "\e[1;34m [*] Download Rootfs, this may take a while base on your internet speed"
+		echo -e "\n\e[1;34m [*] Download Rootfs, this may take a while base on your internet speed"
 		case `dpkg --print-architecture` in
 		aarch64)
 			archurl="arm64" ;;
@@ -20,20 +20,20 @@ if [ "$first" != 1 ];then
 		x86_64)
 			archurl="amd64" ;;	
 		*)
-			echo -e "\e[1;34m [*] Unknown Architecture"; exit 1 ;;
+			echo -e "\n\e[1;34m [*] Unknown Architecture"; exit 1 ;;
 		esac
 		wget "http://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04.3-base-${archurl}.tar.gz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
-	echo -e "\e[1;34m [*] Decompressing Rootfs, please be patient."
+	echo -e "\n\e[1;34m [*] Decompressing Rootfs, please be patient."
 	proot --link2symlink tar -xf ${cur}/${tarball}||:
 	cd "$cur"
 fi
 mkdir -p ubuntu-binds
 bin=ubuntu
-echo -e "\e[1;34m [*] Configuring Ubuntu..."
+echo -e "\n\e[1;34m [*] Configuring Ubuntu..."
 cat > $bin <<- EOM
 #!/bin/bash
 cd \$(dirname \$0)
@@ -73,5 +73,5 @@ termux-fix-shebang $bin
 chmod +x $bin
 mv $bin $PREFIX/bin
 rm -rf $tarball
-echo -e "\e[1;34m [*] The installation is finished"
-echo -e "\e[1;34m [*] Start Ubuntu 20.04 with the command: ${ubuntu}" 
+echo -e "\n\e[1;34m [*] The installation is finished"
+echo -e "\n\e[1;34m [*] Start Ubuntu 20.04 with the command: ${ubuntu}" 
