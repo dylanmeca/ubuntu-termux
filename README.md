@@ -1,4 +1,11 @@
 # Ubuntu 20.04 on Android
+[![Build Status](https://img.shields.io/github/stars/dylanmeca/ubuntu-android.svg)](https://github.com/dylanmeca/ubuntu-android)
+[![License](https://img.shields.io/github/license/dylanmeca/ubuntu-android.svg)](https://github.com/dylanmeca/ubuntu-android/blob/main/LICENSE)
+[![dylanmeca](https://img.shields.io/badge/author-dylanmeca-green.svg)](https://github.com/dylanmeca)
+[![bug_report](https://img.shields.io/badge/bug-report-red.svg)](https://github.com/dylanmeca/ubuntu-android/blob/main/.github/ISSUE_TEMPLATE/bug_report.md)
+[![security_policy](https://img.shields.io/badge/security-policy-cyan.svg)](https://github.com/dylanmeca/ubuntu-android/blob/main/SECURITY.md)
+[![Bash](https://img.shields.io/badge/language-Bash-blue.svg)](https://www.gnu.org/software/bash/)
+
 Install Ubuntu 20.04 on Android using Termux, no need for root.
 
 Develop software using the Ubuntu 20.04 distribution on your android without the need for root and install software maintained by Canonical.
