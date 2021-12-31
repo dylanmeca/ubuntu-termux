@@ -54,7 +54,7 @@ command="proot"
 command+=" --link2symlink"
 # Support System V IPC
 #command+=" --sysvipc"
-command+=" --kernel-release 5.4.0-faked"
+command+=" --kernel-release=5.4.0-faked"
 command+=" -0"
 command+=" -r $PREFIX/share/Ubuntu/$folder"
 if [ -n "\$(ls -A $PREFIX/share/Ubuntu/ubuntu-binds)" ]; then
