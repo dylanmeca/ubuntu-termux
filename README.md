@@ -33,4 +33,4 @@ You can also look at the list of all [contributors](https://github.com/dylanmeca
 
 ## License
 
-The license for this project is [GPL-3.0](https://github.com/dylanmeca/ubuntu-android/blob/main/LICENSE)
+The license for this project is [GPL-3.0](https://github.com/dylanmeca/ubuntu-android/blob/main/LICENSE).
