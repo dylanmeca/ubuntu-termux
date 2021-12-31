@@ -32,7 +32,7 @@ if [ "$first" != 1 ];then
 	cd "$cur"
 fi
 mkdir -p ubuntu-binds
-bin=start-ubuntu.sh
+bin=ubuntu
 echo "writing launch script"
 cat > $bin <<- EOM
 #!/bin/bash
@@ -69,10 +69,9 @@ else
 fi
 EOM
 
-echo "fixing shebang of $bin"
+
 termux-fix-shebang $bin
-echo "making $bin executable"
 chmod +x $bin
-echo "removing image for some space"
+mv $bin $PREFIX/bin
 rm -rf $tarball
-echo "You can now launch Ubuntu with the ${bin} script"
+echo "Start Ubuntu 20.04 with the command: ${ubuntu}" 
