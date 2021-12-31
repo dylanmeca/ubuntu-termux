@@ -23,7 +23,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo -e "\e[1;31m [*] Unknown Architecture"; exit 1 ;;
 		esac
-		wget -c --quiet --show-progress "http://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04.3-base-${archurl}.tar.gz" -O $tarball
+		wget -c --quiet --show-progress "https://partner-images.canonical.com/core/focal/20211217/ubuntu-focal-core-cloudimg-${archurl}-root.tar.gz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
