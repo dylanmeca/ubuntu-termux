@@ -28,7 +28,7 @@ if [ "$first" != 1 ];then
 	mkdir -p "$folder"
 	cd "$folder"
 	printf '\n\e[1;34m%-6s\e[m' '[*] Decompressing Rootfs, please be patient.'
-	proot --link2symlink tar -xf ${cur}/${tarball}||:
+	proot --link2symlink tar -xf ${cur}/${tarball} --warning=no-unknown-keyword --delay-directory-restore --preserve-permissions --exclude='dev'||:
 	cd "$cur"
 fi
 mkdir -p ubuntu-binds
