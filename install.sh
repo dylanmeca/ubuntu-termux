@@ -30,11 +30,11 @@ if [ "$first" != 1 ];then
 	cd "$folder"
 	printf '\n\e[1;34m%-6s\e[m' '[*] Decompressing Rootfs, please be patient.'
 	proot --link2symlink tar -xf ${cur}/${tarball} --warning=no-unknown-keyword --delay-directory-restore --preserve-permissions --exclude='dev'||:
-	cd "$cur"
         rm -rf $carpeta/$folder/etc/resolv.conf
         rm -rf $carpeta/$folder/etc/hosts
         wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/resolv.conf
         wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/hosts
+	cd "$cur"
 fi
 mkdir -p ubuntu-binds
 bin=ubuntu
