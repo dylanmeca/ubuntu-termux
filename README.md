@@ -7,3 +7,19 @@ Develop software using the Ubuntu 20.04 distribution on your android without the
 
 The requirements to install Ubuntu 20.04 on android is to have termux installed and within termux it is necessary to have proot installed. It is not necessary to have root.
 
+## Installation
+
+To install Ubuntu in Termux you need to run these commands:
+
+```shell
+pkg install wget -y
+pkg install proot -y
+wget https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+Once the installation is finished to start Ubuntu you have to execute the command: ```ubuntu```
+
+
+
