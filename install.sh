@@ -43,14 +43,14 @@ command="proot"
 command+=" --link2symlink"
 command+=" -0"
 command+=" -r $folder"
-if [ -n "\$(ls -A ubuntu-binds)" ]; then
-    for f in ubuntu-binds/* ;do
+if [ -n "\$(ls -A $PREFIX/share/Ubuntu/ubuntu-binds)" ]; then
+    for f in $PREFIX/share/Ubuntu/ubuntu-binds/* ;do
       . \$f
     done
 fi
 command+=" -b /dev"
 command+=" -b /proc"
-command+=" -b ubuntu-fs/root:/dev/shm"
+command+=" -b $PREFIX/share/Ubuntu/ubuntu-fs/root:/dev/shm"
 ## uncomment the following line to have access to the home directory of termux
 #command+=" -b /data/data/com.termux/files/home:/root"
 command+=" -b /sdcard"
