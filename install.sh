@@ -30,7 +30,8 @@ if [ "$first" != 1 ];then
 	printf '\n\e[1;34m%-6s\e[m' '[*] Decompressing Rootfs, please be patient.'
 	proot --link2symlink tar -xf ${cur}/${tarball} --warning=no-unknown-keyword --delay-directory-restore --preserve-permissions --exclude='dev'||:
 	cd "$cur"
-        cat > $PREFIX/share/Ubuntu/ubuntu-fs/etc/resolv.conf <<- EOM
+        wifi=$PREFIX/share/Ubuntu/ubuntu-fs/etc/resolv.conf
+        cat > $wifi <<- EOM
         nameserver 1.1.1.1
         nameserver 1.0.0.1
         EOM
