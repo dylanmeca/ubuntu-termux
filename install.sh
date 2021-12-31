@@ -1,6 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
-mkdir -p $PREFIX/share/Ubuntu
-cd $PREFIX/share/Ubuntu
+carpeta=$PREFIX/share/Ubuntu
+mkdir -p $carpeta
+cd $carpeta
 folder=ubuntu-fs
 if [ -d "$folder" ]; then
 	first=1
@@ -22,7 +23,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo -e "\e[1;31m [*] Unknown Architecture"; exit 1 ;;
 		esac
-		wget "http://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04.3-base-${archurl}.tar.gz" -O $tarball
+		wget -c --quiet --show-progress "http://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04.3-base-${archurl}.tar.gz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
@@ -30,11 +31,10 @@ if [ "$first" != 1 ];then
 	printf '\n\e[1;34m%-6s\e[m' '[*] Decompressing Rootfs, please be patient.'
 	proot --link2symlink tar -xf ${cur}/${tarball} --warning=no-unknown-keyword --delay-directory-restore --preserve-permissions --exclude='dev'||:
 	cd "$cur"
-        wifi=$PREFIX/share/Ubuntu/ubuntu-fs/etc/resolv.conf
-        cat > $wifi <<- EOM
-        nameserver 1.1.1.1
-        nameserver 1.0.0.1
-        EOM
+        rm -rf $carpeta/$folder/etc/resolv.conf
+        rm -rf $carpeta/$folder/etc/hosts
+        wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/resolv.conf
+        wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/hosts
 fi
 mkdir -p ubuntu-binds
 bin=ubuntu
