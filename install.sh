@@ -61,7 +61,19 @@ if [ -n "\$(ls -A $PREFIX/share/Ubuntu/ubuntu-binds)" ]; then
     done
 fi
 command+=" -b /dev"
+command+=" -b /dev/urandom:/dev/random"
 command+=" -b /proc"
+command+=" -b /proc/self/fd:/dev/fd"
+command+=" -b /proc/self/fd/0:/dev/stdin"
+command+=" -b /proc/self/fd/1:/dev/stdout"
+command+=" -b /proc/self/fd/2:/dev/stderr"
+command+=" -b /sys"
+command+=" -b /tmp"
+command+=" -b /tmp:/dev/shm"
+command+=" -b /data/dalvik-cache"
+command+=" -b /data/data/com.termux/cache"
+command+=" -b /storage"
+command+=" -b /storage/self/primary:/sdcard"
 command+=" -b $PREFIX/share/Ubuntu/ubuntu-fs/root:/dev/shm"
 ## uncomment the following line to have access to the home directory of termux
 #command+=" -b /data/data/com.termux/files/home:/root"
