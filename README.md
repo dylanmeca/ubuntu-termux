@@ -32,6 +32,26 @@ It is also possible to run an Ubuntu command from Termux. For example: ```ubuntu
 
 This will allow to run ubuntu commands from termux.
 
+## Solution to known issues
+
+* 1- One of the main mistakes is:
+
+```text
+groups: cannot find name for group ID 3003
+groups: cannot find name for group ID 9997
+groups: cannot find name for group ID 50399
+```
+
+To solve this error you must run these commands.
+
+```shell
+addgroup --system --gid 3003 inet
+addgroup --system --gid 9997 everybody
+addgroup --system --gid 50399 all_a399
+```
+
+Once these commands have been executed, this error will have been solved.
+
 ## Authors
 
 * **Dylan Meca** - *Initial Work* - [dylanmeca](https://github.com/dylanmeca)
