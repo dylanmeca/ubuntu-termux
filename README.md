@@ -25,5 +25,10 @@ It is also possible to run an Ubuntu command from Termux. For example: ```ubuntu
 
 This will allow to run ubuntu commands from termux.
 
+## Authors
+
+* **Dylan Meca** - *Initial Work* - [dylanmeca](https://github.com/dylanmeca)
+
+You can also look at the list of all [contributors](https://github.com/dylanmeca/ubuntu-android/contributors) who have participated in this project.
 
 
