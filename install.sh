@@ -9,7 +9,7 @@ fi
 tarball="ubuntu-rootfs.tar.gz"
 if [ "$first" != 1 ];then
 	if [ ! -f $tarball ]; then
-		echo -e "\e[1;34m [*] Download Rootfs, this may take a while base on your internet speed"
+		printf '\e[1;34m%-6s\e[m' '[*] Download Rootfs, this may take a while base on your internet speed'
 		case `dpkg --print-architecture` in
 		aarch64)
 			archurl="arm64" ;;
@@ -27,13 +27,13 @@ if [ "$first" != 1 ];then
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
-	echo -e "\e[1;34m [*] Decompressing Rootfs, please be patient."
+	printf '\e[1;34m%-6s\e[m' '[*] Decompressing Rootfs, please be patient.'
 	proot --link2symlink tar -xf ${cur}/${tarball}||:
 	cd "$cur"
 fi
 mkdir -p ubuntu-binds
 bin=ubuntu
-echo -e "\e[1;34m [*] Configuring Ubuntu..."
+printf '\e[1;34m%-6s\e[m' '[*] Configuring Ubuntu...'
 cat > $bin <<- EOM
 #!/bin/bash
 cd \$(dirname \$0)
@@ -42,7 +42,7 @@ unset LD_PRELOAD
 command="proot"
 command+=" --link2symlink"
 command+=" -0"
-command+=" -r $folder"
+command+=" -r $PREFIX/share/Ubuntu/$folder"
 if [ -n "\$(ls -A $PREFIX/share/Ubuntu/ubuntu-binds)" ]; then
     for f in $PREFIX/share/Ubuntu/ubuntu-binds/* ;do
       . \$f
@@ -73,5 +73,5 @@ termux-fix-shebang $bin
 chmod +x $bin
 mv $bin $PREFIX/bin
 rm -rf $tarball
-echo -e "\e[1;34m [*] The installation is finished"
-echo -e "\e[1;34m [*] Start Ubuntu 20.04 with the command: ${bin}" 
+printf '\e[1;34m%-6s\e[m' '[*] The installation is finished'
+printf '\e[1;34m%-6s\e[m' '[*] Start Ubuntu 20.04 with the command: ${bin}'
