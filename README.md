@@ -21,7 +21,7 @@ chmod +x install.sh
 
 Once the installation is finished to start Ubuntu you have to execute the command: ```ubuntu```
 
-It is also possible to run a command from Termux to Ubuntu. For example: ```ubuntu pwd ```.
+It is also possible to run an Ubuntu command from Termux. For example: ```ubuntu pwd```.
 
 This will allow to run ubuntu commands from termux.
 
