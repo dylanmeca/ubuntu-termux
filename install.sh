@@ -73,5 +73,5 @@ termux-fix-shebang $bin
 chmod +x $bin
 mv $bin $PREFIX/bin
 rm -rf $tarball
-printf '\e[1;34m%-6s\e[m' '[*] The installation is finished'
-printf '\e[1;34m%-6s\e[m' '[*] Start Ubuntu 20.04 with the command: ${bin}'
+printf '\n\e[1;34m%-6s\e[m' '[*] The installation is finished'
+printf '\n\e[1;34m%-6s\e[m' '[*] Start Ubuntu 20.04 with the command: ${bin}'
