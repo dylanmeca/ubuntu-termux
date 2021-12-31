@@ -28,8 +28,9 @@ if [ "$first" != 1 ];then
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
-	printf '\n\e[1;34m%-6s\e[m' '[*] Decompressing Rootfs, please be patient.'
+	printf '\n\e[1;34m%-6s\e[m' '[*] Decompressing Rootfs, please be patient...'
 	proot --link2symlink tar -xf ${cur}/${tarball} --warning=no-unknown-keyword --delay-directory-restore --preserve-permissions --exclude='dev'||:
+        printf '\n\e[1;34m%-6s\e[m' '[*] Downloading of missing components...'
         rm -rf $carpeta/$folder/etc/resolv.conf
         rm -rf $carpeta/$folder/etc/hosts
         wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/resolv.conf
