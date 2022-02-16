@@ -23,7 +23,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo -e "\e[1;31m [*] Unknown Architecture"; exit 1 ;;
 		esac
-		wget -c --quiet --show-progress "https://partner-images.canonical.com/core/focal/20211217/ubuntu-focal-core-cloudimg-${archurl}-root.tar.gz" -O $tarball
+		wget -c --quiet --show-progress "https://partner-images.canonical.com/oci/focal/20220209/ubuntu-focal-oci-${archurl}-root.tar.gz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
@@ -97,7 +97,7 @@ command+=" -b /sdcard"
 command+=" -w /root"
 command+=" /usr/bin/env -i"
 command+=" HOME=/root"
-command+=" PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games"
+command+=" PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games:$PATH"
 command+=" TERM=\$TERM"
 command+=" LANG=C.UTF-8"
 command+=" /bin/bash --login"
