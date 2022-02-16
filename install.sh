@@ -41,6 +41,14 @@ if [ "$first" != 1 ];then
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.version
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.vmstat
         touch $carpeta/$folder/root/.hushlogin
+        chmod u+rw "$carpeta/$folder/etc/passwd" \
+		"$carpeta/$folder/etc/shadow" \
+		"$carpeta/$folder/etc/group" \
+		"$carpeta/$folder/etc/gshadow" >/dev/null 2>&1 || true
+        echo "aid_$(id -un):x:$(id -u):$(id -g):Android user:/:/sbin/nologin" >> \
+                "$carpeta/$folder/etc/passwd"
+        echo "aid_$(id -un):*:18446:0:99999:7:::" >> \
+		"$carpeta/$folder/etc/shadow"
 	cd "$cur"
 fi
 mkdir -p ubuntu-binds
