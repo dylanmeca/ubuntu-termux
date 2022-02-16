@@ -49,6 +49,18 @@ if [ "$first" != 1 ];then
                 "$carpeta/$folder/etc/passwd"
         echo "aid_$(id -un):*:18446:0:99999:7:::" >> \
 		"$carpeta/$folder/etc/shadow"
+        function groups () {
+              local group_name group_id
+              while read -r group_name group_id; do
+                     echo "aid_${group_name}:x:${group_id}:root,aid_$(id -un)" >> \
+                              "$carpeta/$folder/etc/group"
+                     if [ -f "$carpeta/$folder/etc/gshadow" ]; then
+                             echo "aid_${group_name}:*::root,aid_$(id -un)" >> \
+				      "$carpeta/$folder/etc/gshadow"
+		     fi
+              done < <(paste <(id -Gn | tr ' ' '\n') <(id -G | tr ' ' '\n'))		
+        }
+        groups ()
 	cd "$cur"
 fi
 mkdir -p ubuntu-binds
