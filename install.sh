@@ -60,7 +60,7 @@ if [ "$first" != 1 ];then
 		     fi
               done < <(paste <(id -Gn | tr ' ' '\n') <(id -G | tr ' ' '\n'))		
         }
-        groups ()
+        groups 
 	cd "$cur"
 fi
 mkdir -p ubuntu-binds
