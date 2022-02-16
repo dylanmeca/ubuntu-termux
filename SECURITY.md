@@ -12,4 +12,4 @@
 
 ## Report a vulnerability
 
-In case of error, in the scripts, inform us about the error in: [https://github.com/dylanmeca/ubuntu-android/blob/main/.github/ISSUE_TEMPLATE/bug_report.md](https://github.com/dylanmeca/ubuntu-android/blob/main/.github/ISSUE_TEMPLATE/bug_report.md)
+In case of error, in the scripts, inform us about the error in: [https://github.com/dylanmeca/ubuntu-termux/blob/main/.github/ISSUE_TEMPLATE/bug_report.md](https://github.com/dylanmeca/ubuntu-termux/blob/main/.github/ISSUE_TEMPLATE/bug_report.md)
