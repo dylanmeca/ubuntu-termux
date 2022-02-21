@@ -33,13 +33,13 @@ if [ "$first" != 1 ];then
         printf '\n\e[1;34m%-6s\e[m' '[*] Downloading of missing components...'
         rm -rf $carpeta/$folder/etc/resolv.conf
         rm -rf $carpeta/$folder/etc/hosts
-        wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/resolv.conf
-        wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/hosts
-        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.loadavg
-        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.stat
-        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.uptime
-        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.version
-        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-android/main/config/.vmstat
+        wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/resolv.conf
+        wget -P $carpeta/$folder/etc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/hosts
+        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.loadavg
+        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.stat
+        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.uptime
+        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.version
+        wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.vmstat
         touch $carpeta/$folder/root/.hushlogin
         chmod u+rw "$carpeta/$folder/etc/passwd" \
 		"$carpeta/$folder/etc/shadow" \
