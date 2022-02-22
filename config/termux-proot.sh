@@ -9,7 +9,6 @@ export COLORTERM=${COLORTERM-}
 export DEX2OATBOOTCLASSPATH=${DEX2OATBOOTCLASSPATH-}
 export EXTERNAL_STORAGE=${EXTERNAL_STORAGE-}
 [ -z "\$LANG" ] && export LANG=C.UTF-8
-export PATH=\${PATH}:$PREFIX/bin:/system/bin:/system/xbin
 export TERM=${TERM-xterm-256color}
 export TMPDIR=/tmp
 export PULSE_SERVER=127.0.0.1
