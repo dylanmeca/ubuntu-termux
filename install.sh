@@ -41,6 +41,17 @@ if [ "$first" != 1 ];then
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.version
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.vmstat
         touch $carpeta/$folder/root/.hushlogin
+        function android () {
+             local profile_script
+             if [ -d "$carpeta/$folder/etc/profile.d" ]; then
+                    profile_script="$carpeta/$folder/etc/profile.d/termux-proot.sh"
+	     else
+                    chmod u+rw "$carpeta/$folder/etc/profile" >/dev/null 2>&1 || true
+                    profile_script="$carpeta/$folder/etc/profile"
+             fi
+			
+
+        }
         chmod u+rw "$carpeta/$folder/etc/passwd" \
 		"$carpeta/$folder/etc/shadow" \
 		"$carpeta/$folder/etc/group" \
