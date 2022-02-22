@@ -51,8 +51,11 @@ if [ "$first" != 1 ];then
              fi
              local LIBGCC_S_PATH
              LIBGCC_S_PATH="/$(cd ${carpeta}/${folder}; find usr/lib/ -name libgcc_s.so.1)"
-	     wget -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/termux-proot.sh
+	     wget -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/profile.sh
+             chmod +x profile.sh
+             ./profile.sh
              mv termux-proot.sh $profile_script
+             rm -rf profile.sh
              if [ "${LIBGCC_S_PATH}" != "/" ]; then
 		    echo "${LIBGCC_S_PATH}" >> "${carpeta}/${folder}/etc/ld.so.preload"
                     chmod 644 "${carpeta}/${folder}/etc/ld.so.preload"
