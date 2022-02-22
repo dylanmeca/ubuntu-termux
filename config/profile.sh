@@ -1,3 +1,5 @@
+bin=termux-proot.sh
+cat > $bin <<- EOM
 export ANDROID_ART_ROOT=${ANDROID_ART_ROOT-}
 export ANDROID_DATA=${ANDROID_DATA-}
 export ANDROID_I18N_ROOT=${ANDROID_I18N_ROOT-}
@@ -13,3 +15,4 @@ export TERM=${TERM-xterm-256color}
 export TMPDIR=/tmp
 export PULSE_SERVER=127.0.0.1
 export MOZ_FAKE_NO_SANDBOX=1
+EOM
