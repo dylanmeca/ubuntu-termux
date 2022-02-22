@@ -52,16 +52,16 @@ if [ "$first" != 1 ];then
              local LIBGCC_S_PATH
              LIBGCC_S_PATH="/$(cd ${carpeta}/${folder}; find usr/lib/ -name libgcc_s.so.1)"
 	     cat <<- EOF >> "$profile_script"
-             export ANDROID_ART_ROOT=${ANDROID_ART_ROOT-}
-	     export ANDROID_DATA=${ANDROID_DATA-}
-	     export ANDROID_I18N_ROOT=${ANDROID_I18N_ROOT-}
-	     export ANDROID_ROOT=${ANDROID_ROOT-}
-	     export ANDROID_RUNTIME_ROOT=${ANDROID_RUNTIME_ROOT-}
-	     export ANDROID_TZDATA_ROOT=${ANDROID_TZDATA_ROOT-}
-             export BOOTCLASSPATH=${BOOTCLASSPATH-}
-	     export COLORTERM=${COLORTERM-}
-	     export DEX2OATBOOTCLASSPATH=${DEX2OATBOOTCLASSPATH-}
-	     export EXTERNAL_STORAGE=${EXTERNAL_STORAGE-}
+             export ANDROID_ART_ROOT=${ANDROID_ART_ROOT}
+	     export ANDROID_DATA=${ANDROID_DATA}
+	     export ANDROID_I18N_ROOT=${ANDROID_I18N_ROOT}
+	     export ANDROID_ROOT=${ANDROID_ROOT}
+	     export ANDROID_RUNTIME_ROOT=${ANDROID_RUNTIME_ROOT}
+	     export ANDROID_TZDATA_ROOT=${ANDROID_TZDATA_ROOT}
+             export BOOTCLASSPATH=${BOOTCLASSPATH}
+	     export COLORTERM=${COLORTERM}
+	     export DEX2OATBOOTCLASSPATH=${DEX2OATBOOTCLASSPATH}
+	     export EXTERNAL_STORAGE=${EXTERNAL_STORAGE}
 	     [ -z "\$LANG" ] && export LANG=C.UTF-8
 	     export PATH=\${PATH}:$PREFIX/bin:/system/bin:/system/xbin
 	     export TERM=${TERM-xterm-256color}
