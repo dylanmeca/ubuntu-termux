@@ -40,7 +40,6 @@ if [ "$first" != 1 ];then
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.uptime
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.version
         wget -P $carpeta/$folder/proc -c --quiet --show-progress https://raw.githubusercontent.com/dylanmeca/ubuntu-termux/main/config/.vmstat
-        touch $carpeta/$folder/root/.hushlogin
         function android () {
              local profile_script
              if [ -d "$carpeta/$folder/etc/profile.d" ]; then
@@ -141,7 +140,7 @@ command+=" -w /root"
 command+=" /usr/bin/env -i"
 command+=" HOME=/root"
 command+=" PREFIX=/data/data/com.termux/files/usr"
-command+=" PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games:$PATH"
+command+=" PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games:$PATH:/system/bin:/system/xbin"
 command+=" TERM=\$TERM"
 command+=" LANG=C.UTF-8"
 command+=" /bin/bash --login"
