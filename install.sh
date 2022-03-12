@@ -23,7 +23,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo -e "\e[1;31m [*] Unknown Architecture"; exit 1 ;;
 		esac
-		wget -c --quiet --show-progress "https://partner-images.canonical.com/oci/focal/20220209/ubuntu-focal-oci-${archurl}-root.tar.gz" -O $tarball
+		wget -c --quiet --show-progress "https://partner-images.canonical.com/oci/focal/20220302/ubuntu-focal-oci-${archurl}-root.tar.gz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
