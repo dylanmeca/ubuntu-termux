@@ -1,4 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
+printf '\n\e[1;34m%-6s\e[m' '[*] Ubuntu for Termux'
+printf '\n\e[1;34m%-6s\e[m' '[*] Copyright 2022 - 2023 by Dylan Meca. All rights reserved.'
+printf '\n\e[1;34m%-6s\e[m' '[*] License: GPL-3.0'
+printf '\n\e[1;34m%-6s\e[m' '[*] Preparing installation...'
 carpeta=$PREFIX/share/Ubuntu
 mkdir -p $carpeta
 cd $carpeta
@@ -23,7 +27,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo -e "\e[1;31m [*] Unknown Architecture"; exit 1 ;;
 		esac
-		wget -c --quiet --show-progress "https://partner-images.canonical.com/oci/focal/20220302/ubuntu-focal-oci-${archurl}-root.tar.gz" -O $tarball
+		wget -c --quiet --show-progress "https://partner-images.canonical.com/oci/focal/current/ubuntu-focal-oci-${archurl}-root.tar.gz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
